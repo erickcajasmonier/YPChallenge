@@ -1,12 +1,11 @@
-from unittest.case import skip
 from Helper.Common.data_helper import *
 from Helper.Common.request_helper import *
 
-class TestPet(unittest.TestCase):
+class TestAddNewPet(unittest.TestCase):
 
-    pet_endpoint = '/pet'
-    max_number = 300
-    max_lenght = 30
+    pet_endpoint = get_endpoint_data('PET_ENDPOINT')
+    max_number = get_endpoint_data('MAX_NUMBER')
+    max_lenght = get_endpoint_data('MAX_LENGTH')
 
     def test_add_new_available_pet_to_store(self):
         id = generate_random_number(self.max_number)

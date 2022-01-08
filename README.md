@@ -22,5 +22,9 @@ There is a **.env.template** file, this file must be name changed to **.env** fi
 
 To run all tests you need to go to the main project folder for example: `cd /Users/CodeChallenge/YPChallenge` and execute the command `pytest` or `pytest -s` using the terminal.
 
+### Notes:
+- The test relies in random generated data, there is no need to add or change anything before executing the automation tests.
+- There are some tests that were skipped due to some current issues with the API behaviors, you can check the reason of the skipped tests seaching for `@pytest.mark.skip`.
+
 ### Problems faced during local execution of swagger-petstore project:
 - After having the swagger-petstore project in my local, I needed to update the war dependency in the pom file because I had the latest Maven version and there were some conflicts building all the dependencies, after doing that I could deploy the Maven project to my local using mvn or docker commands without any problems.

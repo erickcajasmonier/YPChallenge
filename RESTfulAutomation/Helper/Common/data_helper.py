@@ -1,5 +1,7 @@
+import os
 import random
 import string
+import yaml
 from dotenv import load_dotenv
 from faker import Faker
 
@@ -8,8 +10,14 @@ fake = Faker()
 def initialize_environment():
     load_dotenv()
 
+def get_endpoint_data(endpoint):
+    dirname = os.path.dirname(__file__)
+    file_path = os.path.join(dirname, '../../setup_config.yml')
+    parsed_yaml_file = yaml.load(open(file_path), Loader=yaml.FullLoader)
+    return parsed_yaml_file[endpoint]
+
 def generate_random_number(max_number):
-    return random.randint(0,max_number)
+    return random.randint(0, max_number)
 
 def generate_random_name():
     return fake.name()

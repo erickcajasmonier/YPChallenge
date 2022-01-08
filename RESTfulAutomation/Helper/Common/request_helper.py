@@ -18,7 +18,7 @@ def get_request_api(route, req_body_type='json', res_content_type='xml'):
     return requests.get(os.getenv('BASE_URL') + route,
                         headers=get_request_header(req_body_type, res_content_type))
 
-def post_request_api(route, body, req_body_type='json', res_content_type='xml'):
+def post_request_api(route, body='', req_body_type='json', res_content_type='xml'):
     if req_body_type == 'json':
         body = json.dumps(body)
 
