@@ -23,6 +23,9 @@ def generate_random_number(max_number):
 def generate_random_name():
     return fake.name()
 
+def generate_random_phone_number():
+    return fake.phone_number()
+
 def generate_random_string(lenght):
     string.ascii_letters = "abcdefghijklmnopqrstuvwxyz"
     return str("".join(random.choice(string.ascii_letters) for x in range(lenght)))
