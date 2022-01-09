@@ -1,0 +1,11 @@
+charset-normalizer==2.0.10
+py==1.11.0
+pytest==6.2.5
+requests==2.27.1
+six==1.16.0
+toml==0.10.2
+urllib3==1.26.8
+Faker==11.3.0
+python-dotenv==0.19.2
+PyYAML==6.0
+DateTime==4.3
