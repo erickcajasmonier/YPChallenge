@@ -3,13 +3,13 @@ from Helper.Common.request_helper import *
 
 class TestFindPetByStatus(unittest.TestCase):
 
-    pet_endpoint = get_endpoint_data('PET_ENDPOINT')
+    pet_endpoint = get_config_data('PET_ENDPOINT')
     pet_status_endpoint = pet_endpoint + '/findByStatus?status='
     pet_status_list = ['available', 'pending', 'sold']
 
     def setUp(self):
-        max_number = get_endpoint_data('MAX_NUMBER')
-        max_lenght = get_endpoint_data('MAX_LENGTH')
+        max_number = get_config_data('MAX_NUMBER')
+        max_lenght = get_config_data('MAX_LENGTH')
 
         for status in self.pet_status_list:
             body = {

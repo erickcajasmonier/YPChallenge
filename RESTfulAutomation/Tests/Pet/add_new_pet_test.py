@@ -3,9 +3,9 @@ from Helper.Common.request_helper import *
 
 class TestAddNewPet(unittest.TestCase):
 
-    pet_endpoint = get_endpoint_data('PET_ENDPOINT')
-    max_number = get_endpoint_data('MAX_NUMBER')
-    max_lenght = get_endpoint_data('MAX_LENGTH')
+    pet_endpoint = get_config_data('PET_ENDPOINT')
+    max_number = get_config_data('MAX_NUMBER')
+    max_lenght = get_config_data('MAX_LENGTH')
 
     def test_add_new_available_pet_to_store(self):
         id = generate_random_number(self.max_number)

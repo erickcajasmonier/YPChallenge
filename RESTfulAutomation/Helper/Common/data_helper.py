@@ -10,7 +10,7 @@ fake = Faker()
 def initialize_environment():
     load_dotenv()
 
-def get_endpoint_data(endpoint):
+def get_config_data(endpoint):
     dirname = os.path.dirname(__file__)
     file_path = os.path.join(dirname, '../../setup_config.yml')
     parsed_yaml_file = yaml.load(open(file_path), Loader=yaml.FullLoader)
