@@ -18,7 +18,7 @@ Python Packages used for this AUT project:
 - Faker v11.3.0
 - python-dotenv v0.19.2
 
-There is a **.env.template** file, this file must be name changed to **.env** file.
+#### Important: There is a **.env.template** file, this file must be name changed to **.env** file.
 
 To run all tests you need to go to the main project folder for example: `cd /Users/CodeChallenge/YPChallenge` and execute the command `pytest` or `pytest -s` using the terminal.
 
