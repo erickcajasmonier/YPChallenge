@@ -4,6 +4,7 @@ import string
 import yaml
 from dotenv import load_dotenv
 from faker import Faker
+from datetime import date, datetime, timedelta
 
 fake = Faker()
 
@@ -35,3 +36,7 @@ def generate_random_animal():
                    'Turtle', 'Axolotl', 'Cuttlefish', 'Bat', 'Snake', 'Bandicoot',
                    'Raptor']
     return random.choice(animal_list)
+
+def get_date(days_from_now = 0):
+    date_time = datetime.now() + timedelta(days=days_from_now)
+    return str(date_time).replace(' ', 'T')[:-3] + '+00:00'
