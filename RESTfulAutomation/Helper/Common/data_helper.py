@@ -17,6 +17,10 @@ def get_config_data(endpoint):
     parsed_yaml_file = yaml.load(open(file_path), Loader=yaml.FullLoader)
     return parsed_yaml_file[endpoint]
 
+def get_image_path(image_file_name):
+    dirname = os.path.dirname(__file__)
+    return os.path.join(dirname, '../Images/' + image_file_name)
+
 def generate_random_number(max_number):
     return random.randint(0, max_number)
 

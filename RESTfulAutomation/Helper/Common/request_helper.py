@@ -25,6 +25,13 @@ def post_request_api(route, body='', req_body_type='json', res_content_type='xml
     return requests.post(os.getenv('BASE_URL') + route,
                          headers=get_request_header(req_body_type, res_content_type), data=body)
 
+def post_files_request_api(route, file, body='', req_body_type='json', res_content_type='xml'):
+    if req_body_type == 'json':
+        body = json.dumps(body)
+
+    return requests.post(os.getenv('BASE_URL') + route,
+                         headers=get_request_header(req_body_type, res_content_type), data=body, files=file)
+
 def put_request_api(route, body, req_body_type='json', res_content_type='xml'):
     if req_body_type == 'json':
         body = json.dumps(body)
