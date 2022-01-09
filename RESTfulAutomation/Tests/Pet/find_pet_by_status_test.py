@@ -9,7 +9,7 @@ class TestFindPetByStatus(unittest.TestCase):
 
     def setUp(self):
         max_number = get_config_data('MAX_NUMBER')
-        max_lenght = get_config_data('MAX_LENGTH')
+        max_length = get_config_data('MAX_LENGTH')
 
         for status in self.pet_status_list:
             body = {
@@ -19,10 +19,10 @@ class TestFindPetByStatus(unittest.TestCase):
                     'id': generate_random_number(max_number),
                     'name': generate_random_animal()
                 },
-                'photoUrls': ['https://www.{}.com'.format(generate_random_string_with_numbers(max_lenght))],
+                'photoUrls': ['https://www.{}.com'.format(generate_random_string_with_numbers(max_length))],
                 'tags': [{
                     'id': generate_random_number(max_number),
-                    'name': generate_random_string(max_lenght)
+                    'name': generate_random_string(max_length)
                 }],
                 'status': status
             }

@@ -5,17 +5,17 @@ class TestAddNewPet(unittest.TestCase):
 
     pet_endpoint = get_config_data('PET_ENDPOINT')
     max_number = get_config_data('MAX_NUMBER')
-    max_lenght = get_config_data('MAX_LENGTH')
+    max_length = get_config_data('MAX_LENGTH')
 
     def test_add_new_available_pet_to_store(self):
         id = generate_random_number(self.max_number)
         name = generate_random_name()
         category_id = generate_random_number(self.max_number)
         category_name = generate_random_animal()
-        photo_url_one = 'https://www.{}.com'.format(generate_random_string_with_numbers(self.max_lenght))
-        photo_url_two = 'https://www.{}.com'.format(generate_random_string_with_numbers(self.max_lenght))
+        photo_url_one = 'https://www.{}.com'.format(generate_random_string_with_numbers(self.max_length))
+        photo_url_two = 'https://www.{}.com'.format(generate_random_string_with_numbers(self.max_length))
         tags_id = generate_random_number(self.max_number)
-        tags_name = generate_random_string(self.max_lenght)
+        tags_name = generate_random_string(self.max_length)
 
         body = {
             'id': id,
@@ -50,9 +50,9 @@ class TestAddNewPet(unittest.TestCase):
         name = generate_random_name()
         category_id = generate_random_number(self.max_number)
         category_name = generate_random_animal()
-        photo_url_one = 'https://www.{}.com'.format(generate_random_string_with_numbers(self.max_lenght))
+        photo_url_one = 'https://www.{}.com'.format(generate_random_string_with_numbers(self.max_length))
         tags_id = generate_random_number(self.max_number)
-        tags_name = generate_random_string(self.max_lenght)
+        tags_name = generate_random_string(self.max_length)
 
         body = {
             'id': id,
@@ -90,10 +90,10 @@ class TestAddNewPet(unittest.TestCase):
                 'id': generate_random_number(self.max_number),
                 'name': generate_random_animal()
             },
-            'photoUrls': ['https://www.{}.com'.format(generate_random_string_with_numbers(self.max_lenght))],
+            'photoUrls': ['https://www.{}.com'.format(generate_random_string_with_numbers(self.max_length))],
             'tags': [{
                 'id': generate_random_number(self.max_number),
-                'name': generate_random_string(self.max_lenght)
+                'name': generate_random_string(self.max_length)
             }],
             'status': 'available'
         }
@@ -110,10 +110,10 @@ class TestAddNewPet(unittest.TestCase):
                 'id': generate_random_number(self.max_number),
                 'name': generate_random_animal()
             },
-            'photoUrls': ['https://www.{}.com'.format(generate_random_string_with_numbers(self.max_lenght))],
+            'photoUrls': ['https://www.{}.com'.format(generate_random_string_with_numbers(self.max_length))],
             'tags': [{
                 'id': generate_random_number(self.max_number),
-                'name': generate_random_string(self.max_lenght)
+                'name': generate_random_string(self.max_length)
             }],
             'status': 'available'
         }

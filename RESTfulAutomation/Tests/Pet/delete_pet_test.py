@@ -5,7 +5,7 @@ class TestDeletePet(unittest.TestCase):
 
     pet_endpoint = get_config_data('PET_ENDPOINT')
     max_number = get_config_data('MAX_NUMBER')
-    max_lenght = get_config_data('MAX_LENGTH')
+    max_length = get_config_data('MAX_LENGTH')
 
     def setUp(self):
         self.pet_id = generate_random_number(self.max_number)
@@ -17,10 +17,10 @@ class TestDeletePet(unittest.TestCase):
                 'id': generate_random_number(self.max_number),
                 'name': generate_random_animal()
             },
-            'photoUrls': ['https://www.{}.com'.format(generate_random_string_with_numbers(self.max_lenght))],
+            'photoUrls': ['https://www.{}.com'.format(generate_random_string_with_numbers(self.max_length))],
             'tags': [{
                 'id': generate_random_number(self.max_number),
-                'name': generate_random_string(self.max_lenght)
+                'name': generate_random_string(self.max_length)
             }],
             'status': 'available'
         }

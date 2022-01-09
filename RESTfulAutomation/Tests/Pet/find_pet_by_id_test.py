@@ -5,16 +5,16 @@ class TestFindPetById(unittest.TestCase):
 
     pet_endpoint = get_config_data('PET_ENDPOINT')
     max_number = get_config_data('MAX_NUMBER')
-    max_lenght = get_config_data('MAX_LENGTH')
+    max_length = get_config_data('MAX_LENGTH')
 
     def setUp(self):
         self.pet_id = generate_random_number(self.max_number)
         self.name = generate_random_name()
         self.category_id = generate_random_number(self.max_number)
         self.category_name = generate_random_animal()
-        self.photo_url_one = 'https://www.{}.com'.format(generate_random_string_with_numbers(self.max_lenght))
+        self.photo_url_one = 'https://www.{}.com'.format(generate_random_string_with_numbers(self.max_length))
         self.tags_id = generate_random_number(self.max_number)
-        self.tags_name = generate_random_string(self.max_lenght)
+        self.tags_name = generate_random_string(self.max_length)
         self.status = 'available'
 
         body = {
