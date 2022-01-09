@@ -2,7 +2,7 @@ from Helper.Common.data_helper import *
 from Helper.Common.request_helper import *
 from Helper.Common.create_user import create_user
 
-class TestUserlogin(unittest.TestCase):
+class TestUserLogout(unittest.TestCase):
 
     user_logout_endpoint = get_config_data('USER_ENDPOINT') + '/logout'
 

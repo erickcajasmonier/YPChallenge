@@ -2,7 +2,7 @@ from Helper.Common.data_helper import *
 from Helper.Common.request_helper import *
 from Helper.Common.create_user import create_user
 
-class TestUserlogin(unittest.TestCase):
+class TestUserLogin(unittest.TestCase):
 
     user_login_endpoint = get_config_data('USER_ENDPOINT') + '/login'
     max_number = get_config_data('MAX_NUMBER')
