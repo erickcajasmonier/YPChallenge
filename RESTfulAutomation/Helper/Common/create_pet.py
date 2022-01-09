@@ -1,4 +1,3 @@
-import requests
 from Helper.Common.data_helper import *
 from Helper.Common.request_helper import *
 
