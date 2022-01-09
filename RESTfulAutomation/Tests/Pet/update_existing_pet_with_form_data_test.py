@@ -37,7 +37,7 @@ class TestUpdateExistingPetFormData(unittest.TestCase):
         status = 'available'
 
         response = post_request_api(self.pet_endpoint + '/{}?name={}&status={}'.format(self.pet_id, name, status),
-                                    req_body_type='xml', res_content_type='json')
+                                    res_content_type='json')
         json_response = response.json()
         
         assert(response.status_code == 200)
@@ -56,7 +56,7 @@ class TestUpdateExistingPetFormData(unittest.TestCase):
         status = 'available'
 
         response = post_request_api(self.pet_endpoint + '/{}?name={}&status={}'.format(bad_id, name, status),
-                                    req_body_type='xml', res_content_type='json')
+                                    res_content_type='json')
         
         assert(response.status_code == 404)
         assert(response.text == 'Pet not found')
@@ -67,6 +67,6 @@ class TestUpdateExistingPetFormData(unittest.TestCase):
         status = 'available'
 
         response = post_request_api(self.pet_endpoint + '/{}?name={}&status={}'.format(id, name, status),
-                                    req_body_type='xml', res_content_type='json')
+                                    res_content_type='json')
         
         assert(response.status_code == 400)
