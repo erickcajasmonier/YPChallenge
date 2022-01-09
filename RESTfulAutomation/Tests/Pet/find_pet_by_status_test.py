@@ -4,7 +4,7 @@ from Helper.Common.request_helper import *
 class TestUpdateExistingPetFormData(unittest.TestCase):
 
     pet_endpoint = get_endpoint_data('PET_ENDPOINT')
-    pet_status_endpoint = pet_endpoint + + '/findByStatus?status='
+    pet_status_endpoint = pet_endpoint + '/findByStatus?status='
     pet_status_list = ['available', 'pending', 'sold']
 
     def setUp(self):
