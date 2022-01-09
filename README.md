@@ -17,8 +17,10 @@ Python Packages used for this AUT project:
 - requests v2.27.1
 - Faker v11.3.0
 - python-dotenv v0.19.2
+- pyyaml v6.0
+- datetime v4.3
 
-#### Important: There is a **.env.template** file, this file must be name changed to **.env** file.
+#### Important: There is a **".env.template"** file, this file must be name changed to **".env"** file.
 
 To run all tests you need to go to the main project folder for example: `cd /Users/CodeChallenge/YPChallenge` and execute the command `pytest` or `pytest -s` using the terminal.
 
@@ -93,6 +95,15 @@ In all test cases were verified the response status codes, response bodies (json
 
 ### Python Automation Results:
 ![Automation Results](/automation_result.png?raw=true)
+
+### Why did I choose this tech stack:
+I choosed to work with python because of the following:
+- Readable code: Python syntax is very clear and code reads like English.
+- General purpose language: Python can be used to solve almost every programming tasks, even with data analysis, task automation, etc.
+- Rich standard libraries: Python include libraries that helps you easily accomplish common programming tasks.
+- Coding productivity: Python allows you to accomplish a lot with less code, which can save testing time and maintenance.
+- Script execution: Python comes preinstalled on Mac and Linux systems, you can easily run Python scripts from the shell/terminal.
+- Easy to configure and install: Python is easy to be configured, installed and managed into Windows, Mac and Linux systems.
 
 ### Notes:
 - The test relies in random generated data, there is no need to add or change anything before executing the automation tests.
