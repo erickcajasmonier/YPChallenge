@@ -26,6 +26,8 @@ To run all tests you need to go to the main project folder for example: `cd /Use
 
 ### Test Cases:
 In all test cases were verified the response status codes, response bodies (json and xml), and response texts.
+I considered as priority the CRUD functionalities of the "Pet", "Store" and "User" APIs, as it's a pet store the main focus will be in the pets management (CRUD) including image upload for customers first impression, have the store orders and inventory managament (CRUD) and in case of having a customer or internal web/mobile application the user management (CRUD).
+Some extra verification was added as time allowed, like "Update and existing pet with form data" that can be an endpoint that is not used due to a duplication (with different structure/format) of "Update an existing pet"
 #### PET
 - Add a new pet to the store:
   - Add pet successfully with available status.
