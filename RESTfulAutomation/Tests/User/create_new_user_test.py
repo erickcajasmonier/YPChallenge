@@ -2,7 +2,7 @@ from Helper.Common.data_helper import *
 from Helper.Common.request_helper import *
 from Helper.Common.create_pet import create_pet
 
-class TestPlacePetOrder(unittest.TestCase):
+class TestCreateNewUser(unittest.TestCase):
 
     user_endpoint = get_config_data('USER_ENDPOINT')
     max_number = get_config_data('MAX_NUMBER')
