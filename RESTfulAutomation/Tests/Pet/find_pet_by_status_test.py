@@ -1,7 +1,7 @@
 from Helper.Common.data_helper import *
 from Helper.Common.request_helper import *
 
-class TestUpdateExistingPetFormData(unittest.TestCase):
+class TestFindPetByStatus(unittest.TestCase):
 
     pet_endpoint = get_endpoint_data('PET_ENDPOINT')
     pet_status_endpoint = pet_endpoint + '/findByStatus?status='

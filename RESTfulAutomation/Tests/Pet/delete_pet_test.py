@@ -1,7 +1,7 @@
 from Helper.Common.data_helper import *
 from Helper.Common.request_helper import *
 
-class TestUpdateExistingPetFormData(unittest.TestCase):
+class TestDeletePet(unittest.TestCase):
 
     pet_endpoint = get_endpoint_data('PET_ENDPOINT')
     max_number = get_endpoint_data('MAX_NUMBER')
