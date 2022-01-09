@@ -1,5 +1,6 @@
 from Helper.Common.data_helper import *
 from Helper.Common.request_helper import *
+from Helper.Common.create_pet import create_pet
 
 class TestFindPetById(unittest.TestCase):
 
@@ -8,31 +9,15 @@ class TestFindPetById(unittest.TestCase):
     max_length = get_config_data('MAX_LENGTH')
 
     def setUp(self):
-        self.pet_id = generate_random_number(self.max_number)
-        self.name = generate_random_name()
-        self.category_id = generate_random_number(self.max_number)
-        self.category_name = generate_random_animal()
-        self.photo_url_one = 'https://www.{}.com'.format(generate_random_string_with_numbers(self.max_length))
-        self.tags_id = generate_random_number(self.max_number)
-        self.tags_name = generate_random_string(self.max_length)
-        self.status = 'available'
-
-        body = {
-            'id': self.pet_id,
-            'name': self.name,
-            'category': {
-                'id': self.category_id,
-                'name': self.category_name
-            },
-            'photoUrls': [self.photo_url_one],
-            'tags': [{
-                'id': self.tags_id,
-                'name': self.tags_name
-            }],
-            'status': self.status
-        }
-
-        post_request_api(self.pet_endpoint, body)
+        created_pet = create_pet(self.max_number, self.max_length)
+        self.pet_id = created_pet['pet_id']
+        self.name = created_pet['name']
+        self.category_id = created_pet['category_id']
+        self.category_name = created_pet['category_name']
+        self.photo_url_one = created_pet['photo_url_one']
+        self.tags_id = created_pet['tags_id']
+        self.tags_name = created_pet['tags_name']
+        self.status = created_pet['status']
 
     def test_find_pet_by_id(self):
         response = get_request_api(self.pet_endpoint + '/{}'.format(self.pet_id))

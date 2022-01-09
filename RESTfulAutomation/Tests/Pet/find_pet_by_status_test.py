@@ -1,10 +1,10 @@
 from Helper.Common.data_helper import *
 from Helper.Common.request_helper import *
+from Helper.Common.create_pet import create_pet
 
 class TestFindPetByStatus(unittest.TestCase):
 
-    pet_endpoint = get_config_data('PET_ENDPOINT')
-    pet_status_endpoint = pet_endpoint + '/findByStatus?status='
+    pet_status_endpoint = get_config_data('PET_ENDPOINT') + '/findByStatus?status='
     pet_status_list = ['available', 'pending', 'sold']
 
     def setUp(self):
@@ -12,22 +12,7 @@ class TestFindPetByStatus(unittest.TestCase):
         max_length = get_config_data('MAX_LENGTH')
 
         for status in self.pet_status_list:
-            body = {
-                'id': generate_random_number(max_number),
-                'name': generate_random_name(),
-                'category': {
-                    'id': generate_random_number(max_number),
-                    'name': generate_random_animal()
-                },
-                'photoUrls': ['https://www.{}.com'.format(generate_random_string_with_numbers(max_length))],
-                'tags': [{
-                    'id': generate_random_number(max_number),
-                    'name': generate_random_string(max_length)
-                }],
-                'status': status
-            }
-
-            post_request_api(self.pet_endpoint, body)
+            create_pet(max_number, max_length, status)
 
     def test_find_pet_by_available_status(self):
         available_status = self.pet_status_list[0]

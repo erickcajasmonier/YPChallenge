@@ -1,5 +1,6 @@
 from Helper.Common.data_helper import *
 from Helper.Common.request_helper import *
+from Helper.Common.create_pet import create_pet
 
 class TestUpdateExistingPet(unittest.TestCase):
 
@@ -8,24 +9,8 @@ class TestUpdateExistingPet(unittest.TestCase):
     max_length = get_config_data('MAX_LENGTH')
 
     def setUp(self):
-        self.pet_id = generate_random_number(self.max_number)
-
-        body = {
-            'id': self.pet_id,
-            'name': generate_random_name(),
-            'category': {
-                'id': generate_random_number(self.max_number),
-                'name': generate_random_animal()
-            },
-            'photoUrls': ['https://www.{}.com'.format(generate_random_string_with_numbers(self.max_length))],
-            'tags': [{
-                'id': generate_random_number(self.max_number),
-                'name': generate_random_string(self.max_length)
-            }],
-            'status': 'available'
-        }
-
-        post_request_api(self.pet_endpoint, body)
+        created_pet = create_pet(self.max_number, self.max_length, 'unavailable')
+        self.pet_id = created_pet['pet_id']
 
     def test_update_existing_pet(self):
         name = generate_random_name()
